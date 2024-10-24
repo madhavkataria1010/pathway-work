@@ -14,7 +14,7 @@ To install Pathway using Conda, follow these steps:
 1. **Create a Conda Environment**:
    Open your terminal and run:
    ```bash
-   conda create -n pathway_env python=3.8
+   conda create -n pathway_env python=3.10
    ```
 
 2. **Activate the Environment**:
@@ -43,12 +43,6 @@ If you prefer to use Docker, follow these instructions:
    ```bash
    docker run -it --entrypoint /bin/bash pathwaycom/pathway:latest
    ```
-
----
-## Input Connectors 
-![Input Connectors](assets/Input_connectors.png)
-
-
 ## Helpful Commands
 
 - **Activate Conda Environment**:
@@ -63,6 +57,11 @@ If you prefer to use Docker, follow these instructions:
 
 - **Exit Docker Container**:
   Type `exit` or press `Ctrl + D`.
-
+  
 ---
+## Input Connectors 
+![Input Connectors](assets/Input_connectors.png)
+
+## Basic example fort running 
+![Input Connectors](assets/basic_eg.png)
 
