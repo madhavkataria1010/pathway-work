@@ -16,7 +16,7 @@ pip install -U pathway
 
 
 
-Using Docker (Any OS)
+2. **Using Docker (Any OS)**:
 
 	1.	Pull the Docker image:
 
