@@ -1,9 +1,7 @@
 # Pathway Installation Guide
 
 ## Overview
-
 This is the inhouse pathway guide for interIIT tech 
----
 
 ## Installation Methods
 
@@ -57,11 +55,40 @@ If you prefer to use Docker, follow these instructions:
 
 - **Exit Docker Container**:
   Type `exit` or press `Ctrl + D`.
-  
+
 ---
 ## Input Connectors 
 ![Input Connectors](assets/Input_connectors.png)
 
 ## Basic example fort running 
 ![Input Connectors](assets/basic_eg.png)
+
+### How to join filter and ETL
+Apache Kafka is used for realtime data streaming and messaging so we can integrate it using pathway 
+
+like given below is the example how to connect a CSV file to Apache Kafka
+
+```bash 
+rdkafka_settings = {
+# add your setting here
+}
+
+#accesing measurments using Kafka
+measurements_table = pw.io.kafka.read(
+    rdkafka_settings,
+    topic="topic",
+    schema=MeasurementSchema,
+    format="json",
+    autocommit_duration_ms=1000
+)
+joined_table = measurements_table.join #using this command to join the table
+
+# Sending the results to another Kafka topic, on the same Kafka instance
+
+pw.io.kafka.write(alerts_table, rdkafka_settings, topic_name="alerts_topic", format="json")
+```
+
+![Input Connectors](assets/kafka.png)
+Above is the given example is the sheet how the process flow work for realtime datastreaming 
+
 
